@@ -213,7 +213,7 @@
 		</table>
 		</div>
 		
-		<!--
+		
 		<div class="col sidebar">
 			<div class="row">
 				<div class="col logo-half">
@@ -236,22 +236,21 @@
 			</div>
 		</div>
 		
-		-->
+		
 	</div>
 </div>
 
 
 <script type="text/javascript">
 	$(function() {	
-	 $("#activities").on("click", function(){
-		 $("#body").load("donate.html");
-	 });
+        $(document.body).on('click', "#activities", function(){
+            $('#body').load("donate.html");
+        });
 
-
-	 $("#backagain").on("click", function(){
-		$("#body").load("get_involved.html");
-	 });
-	});
+        $(document.body).on('click', "#backagain", function(){
+            $('#body').load("get_involved.html");
+        });
+    });
 </script>
 </body>
 </html>
