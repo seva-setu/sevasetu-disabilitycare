@@ -1,32 +1,57 @@
 <?php
-	function get_surveyed(){
-		$default_surveyed = 1014;
-		if(true)
-			return $default_surveyed;
-	}
-	function get_eligible(){
-		$default_eligible = 817;
-		if(true)
-			return $default_eligible;
-	}
-	function get_processed(){
-		$default_applied = 93;
-		if(true)
-			return $default_applied;
-	}
-	function get_crc(){
-		$default_processed = 6;
-		if(true)
-			return $default_processed;
+	$url = "https://docs.google.com/spreadsheets/d/1C0f-t_LKZ0JGn-IbCAqb2WSLIpcPJHu2d3W6Z1PSbng/pub?gid=1170854807&single=true&output=csv";
+	
+	$data = get_csv_content($url);
+	$is_valid = validate_data($data);
+	
+	$data_to_publish = array(1014, 817, 93, 6);
+	
+	if($is_valid){
+		$all_count = get_all_counts($data);
+		
+		$data_to_publish[0] = $all_count;
+		$data_to_publish[1] = get_counts($data, 4, $all_count);
+		$data_to_publish[2] = get_counts($data, 5, $all_count);
+		//$data_to_publish[3] = get_counts($data, 6, $all_count);
 	}
 	
+	function get_all_counts($data){
+		for($i=0; $i<count($data); $i++)
+			if($data[$i][2] == '' and $data[$i][3] == '')
+				break;
+		return ($i+1);
+	}
 	
+	function get_counts($data, $index, $max_count){
+		$count 		= 0;
+		for($i=0; $i<$max_count; $i++){
+			if($data[$i][$index] != '')
+				$count += 1;
+		}
+		return $count;
+	}
+	function get_csv_content($spreadsheet_url){
+		if(!ini_set('default_socket_timeout', 15)) 
+		echo "<!-- unable to change socket timeout -->";
+
+		if (($handle = fopen($spreadsheet_url, "r")) !== FALSE) {
+			while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+				$spreadsheet_data[] = $data;
+			}
+			fclose($handle);
+			return $spreadsheet_data;
+		}
+	}
+	
+	function validate_data($data){
+		return true;
+	}
 	
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Seva Setu - Disability Care</title>
 	
 	<meta name="viewport" content="width=device-width">
@@ -155,7 +180,7 @@
 		<table>
 			<tr>
 				<td  align="left" valign="middle"><h3>Number of differently abled surveyed</h3></td>
-				<td  align="right"><h2><span class="label label-stats"><?php echo get_surveyed();?></span></h2></td>
+				<td  align="right"><h2><span class="label label-stats"><?php echo $data_to_publish[0];?></span></h2></td>
 			</tr>
 			<tr>
 				<td colspan=2><p class="desc">Individuals in rural Bihar we surveyed with suspected disability (mental, physical)</p></td>
@@ -163,7 +188,7 @@
 			
 			<tr>
 				<td align="left" valign="middle"><h3>Number not receiving any benefits</h3></td>
-				<td align="right"><h2><span class="label label-stats"><?php echo get_eligible();?></span></h2></td>
+				<td align="right"><h2><span class="label label-stats"><?php echo $data_to_publish[1];?></span></h2></td>
 			</tr>
 			<tr>
 				<td colspan=2><p class="desc">Those assessed by PHCs to be eligible but not receiving any government benefits</p></td>
@@ -171,7 +196,7 @@
 			
 			<tr>
 				<td align="left" valign="middle"><h3>Number who have now begun receiving benefits</h3></td>
-				<td align="right"><h2><span class="label label-processed"><?php echo get_processed();?></span></h2></td>
+				<td align="right"><h2><span class="label label-processed"><?php echo $data_to_publish[2];?></span></h2></td>
 			</tr>
 			<tr>
 				<td colspan=2><p class="desc">Those whom Seva Setu helps in submitting relevant paperwork and opening bank accounts to receive different benefits</p></td>
@@ -179,7 +204,7 @@
 			
 			<tr>
 				<td align="left" valign="middle"><h3>Beneficiaries who have been treated at CRCs</h3></td>
-				<td align="right"><h2><span class="label label-crc"><?php echo get_crc();?></span></h2></td>
+				<td align="right"><h2><span class="label label-crc"><?php echo $data_to_publish[3];?></span></h2></td>
 			</tr>
 			<tr>
 				<td colspan=2><p class="desc">Those receiving full government benefits whom we have connected to CRCs for other benefits like hearing aids, wheelchairs etc.</p></td>
