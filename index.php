@@ -213,6 +213,7 @@
 		</table>
 		</div>
 		
+		<!--
 		<div class="col sidebar">
 			<div class="row">
 				<div class="col logo-half">
@@ -234,6 +235,8 @@
 				<div class="col"><a href="#" id="activities">Donate</a></div>
 			</div>
 		</div>
+		
+		-->
 	</div>
 </div>
 
