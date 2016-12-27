@@ -55,7 +55,11 @@
 	<title>Seva Setu - Disability Care</title>
 	
 	<meta name="viewport" content="width=device-width">
-
+	
+	<meta name="description" content="Seva Setu's work done towards the differently abled in Bihar. Live statistics from our databanks.">
+	
+	<meta name="keywords" content="disability, divyaang, viklang, seva setu, bihar, ngo, social organization, self sufficiency, government schemes, service">
+	
 	<!-- a grid framework in 250 bytes? are you kidding me?! -->
 	<link rel="stylesheet" href="css/grid.css">
 	
@@ -75,9 +79,11 @@
 		@media only screen and (min-width: 34em) {
 			body{ padding-left: 3em; }
 			.feature, .info { width: 50%; }
+			
 			.logo 	 { width: 20%;   }
 			.logo-half	 { width: 50%;   }
 			.title 	 { width: 60%;   }
+			.imagebar {width: 33.3%;    }
 		}
 
 		@media only screen and (min-width: 54em) {
@@ -86,6 +92,7 @@
 			.sidebar { width: 33.33%; }
 			.info    { width: 100%;   }
 			
+			.imagebar {width: 33.3%;    }
 			.logo 	 { width: 30%;   }
 			.logo-half	 { width: 70%;   }
 			.title 	 { width: 60%;   }
@@ -97,6 +104,7 @@
 			.sidebar { width: 35%; } /* 5/12 */
 			.info    { width: 50%;    }
 			
+			.imagebar {width: 33.3%;    }
 			.logo 	 { width: 25%;   }
 			.logo-half	 { width: 35%;   }
 			.title 	 { width: 60%;   }
@@ -228,11 +236,20 @@
 				</p>
 			</div>
 			
+			<!-- Add info about getting involved -->
 			<div class="row">&nbsp;</div>
 			<div class="row">&nbsp;</div>
 			
-			<div class="row" id="body">
-				<div class="col"><a href="#" id="activities">Donate</a></div>
+			<div id="body">
+				&nbsp;
+			</div>
+			
+			<div class="row">&nbsp;</div>
+			<div class="row">&nbsp;</div>
+			
+			<div class="row">
+				<div class="col"><h3 align="center">Get in touch</h3></div>
+				<div class="col">Do you have thoughts? Appreciate our work? Please feel free to write to us on <i>programs@sevasetu.org</i></div>
 			</div>
 		</div>
 		
@@ -243,13 +260,25 @@
 
 <script type="text/javascript">
 	$(function() {	
-        $(document.body).on('click', "#activities", function(){
+        $(document.body).on('click', "#activities1", function(){
             $('#body').load("donate.html");
         });
+		
+		$(document.body).on('click', "#activities2", function(){
+            $('#body').load("beginner.html");
+        });
 
-        $(document.body).on('click', "#backagain", function(){
+        $(document.body).on('click', "#activities3", function(){
+            $('#body').load("advanced.html");
+        });
+		
+		$(document.body).on('click', "#backagain", function(){
             $('#body').load("get_involved.html");
         });
+		
+		$( document ).ready(function() {
+			$('#body').load("get_involved.html");
+		});
     });
 </script>
 </body>
