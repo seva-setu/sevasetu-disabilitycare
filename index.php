@@ -232,7 +232,7 @@
 				
 				<h3><a href="http://sevasetu.org/seva-setus-work-for-the-differently-able-part-i/" class="header-text" target="__blank">Read our blog</href></a></h3>
 				<p>
-				Understand more about this process. What are some operational challenges? An analysis of  relevant policies in place. <a href="http://sevasetu.org" class="inline-text" target="__blank">[Link]</a>
+				Understand more about this process. What are some operational challenges? An analysis of  relevant policies in place. <a href="http://sevasetu.org/seva-setus-work-for-the-differently-able-part-i/" class="inline-text" target="__blank">[Link]</a>
 				</p>
 			</div>
 			
