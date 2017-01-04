@@ -225,12 +225,12 @@
 		<div class="col sidebar">
 			<div class="row">
 				<div class="col logo-half">
-				<a href="http://sevasetu.org" class="image-link" target="__blank">
+				<a href="http://sevasetu.org/seva-setus-work-for-the-differently-able-part-i/" class="image-link" target="__blank">
 				<img src="img/blog_pic1.png" height="120" width="120" alt="thumbnail"/>
 				</a>
 				</div>
 				
-				<h3><a href="http://sevasetu.org" class="header-text" target="__blank">Read our blog</href></a></h3>
+				<h3><a href="http://sevasetu.org/seva-setus-work-for-the-differently-able-part-i/" class="header-text" target="__blank">Read our blog</href></a></h3>
 				<p>
 				Understand more about this process. What are some operational challenges? An analysis of  relevant policies in place. <a href="http://sevasetu.org" class="inline-text" target="__blank">[Link]</a>
 				</p>
