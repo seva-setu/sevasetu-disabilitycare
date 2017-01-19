@@ -175,7 +175,7 @@
 	<div class="row">
 		<div class="col logo"><a href="http://sevasetu.org" class="image-link" target="__blank"><img src = "img/logo.jpg" height="90" width="65"/></a></div>
 		
-		<div class="col title"><h2 align="center">Seva Setu - Disabled care</h2>
+		<div class="col title"><h2 align="center">Seva Setu's programs for the differently abled</h2>
 		
 		<p class="desc1 boxify">One of <a href="http://sevasetu.org" class="inline-text" target="__blank"><b>Seva Setu's</b></a> sub-programs in its Citizen Care program is to ensure every differently abled person makes use of all the government benefits entitled to him. We routinely visit door-to-door and gather information on the differently abled in each household in rural Bihar. We then track and assist them in utilizing various schemes targeted at them. This webpage reflects numbers from our work done on the field.</p>
 		</div>
